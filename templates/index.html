@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insighters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Insighters</h1>
+        <h2>Summary Table</h2>
+        <div class="summary-table">{{ summary|safe }}</div>
+
+        <h2>Category Distribution</h2>
+        <div class="plotly-graph-div">{{ bar_html|safe }}</div>
+
+        <h2>Price Trends</h2>
+        <div class="plotly-graph-div">{{ line_html|safe }}</div>
+
+        <h2>Price Prediction</h2>
+        <div class="plotly-graph-div">{{ scatter_html|safe }}</div>
+        
+        <h2>Model Evaluation Metrics</h2>
+        <div class="metrics-div">{{ metrics_html|safe }}</div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024
